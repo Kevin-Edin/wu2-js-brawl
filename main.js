@@ -3,9 +3,24 @@ const enemyName = "Bertil"
 let playerHp = 100
 let enemyHp = 100
 
+const startButton = document.querySelector("#start-button")
+startButton.addEventListener("click", startRound)
+
+const playerHpText = document.querySelector("#player-hp")
+playerHpText.textContent = playerHp
+
+const enemyHpText = document.querySelector("#enemy-hp")
+enemyHpText.textContent = enemyHp
+
 function rollDice()
 {
     return Math.ceil(Math.random() * 6)
+}
+
+function updateHealth()
+{
+    playerHpText.textContent = playerHp
+    enemyHpText.textContent = enemyHp
 }
 
 function takeDamage(attacker, target, hp, highest_value, lowest_value)
@@ -33,7 +48,5 @@ function startRound()
     {
         console.log("Alla missade sina attacker.")
     }
-
+    updateHealth()
 }
-
-startRound()
