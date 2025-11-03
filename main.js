@@ -12,6 +12,8 @@ playerHpText.textContent = playerHp
 const enemyHpText = document.querySelector("#enemy-hp")
 enemyHpText.textContent = enemyHp
 
+const combatLog = document.querySelector("#combat-log")
+
 function rollDice()
 {
     return Math.ceil(Math.random() * 6)
@@ -26,8 +28,7 @@ function updateHealth()
 function takeDamage(attacker, target, hp, highest_value, lowest_value)
 {
     new_hp = hp - (highest_value - lowest_value)
-    console.log(attacker + " slog " + target + " och tog " + (hp - new_hp) + " skada.")
-    console.log(target + " har nu " + new_hp + "hp kvar.")
+    combatLog.textContent = (attacker + " slog " + target + " och tog " + (hp - new_hp) + " skada.")
     return new_hp
 }
 
@@ -46,7 +47,7 @@ function startRound()
     }
     else
     {
-        console.log("Alla missade sina attacker.")
+        combatLog.textContent = "Alla missade sina attacker."
     }
     updateHealth()
 }
