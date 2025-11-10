@@ -10,9 +10,15 @@
     <main>
         <h1>Brawl</h1>
         <button id="start-button">Starta Runda</button>
+        <div class="health_bars">
+            <div class="health_bar_outline">
+                <img src="sprites/healthbar/brawl_health_bar.png" alt="bar">
+                <img src="sprites/healthbar/brawl_health_empty.png" alt="empty">
+            </div>
+        </div>
         <h2>Player hp: <span id="player-hp">0</span></h2>
         <h2>Enemy hp: <span id="enemy-hp">0</span></h2>
-        <h3><span id="combat-log"></span></h3>
+        <ul id="combat-log" class="logList"></ul>
     </main>
     <script src="main.js"></script>
 </body>

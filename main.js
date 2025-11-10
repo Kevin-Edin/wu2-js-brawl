@@ -14,6 +14,15 @@ enemyHpText.textContent = enemyHp
 
 const combatLog = document.querySelector("#combat-log")
 
+function log(msg) {
+    const li = document.createElement("li")
+    li.textContent = msg
+    combatLog.appendChild(li)
+    if (combatLog.childNodes.length > 10) {
+        combatLog.removeChild(combatLog.firstChild)
+    }
+}
+
 function rollDice()
 {
     return Math.ceil(Math.random() * 6)
@@ -28,7 +37,7 @@ function updateHealth()
 function takeDamage(attacker, target, hp, highest_value, lowest_value)
 {
     new_hp = hp - (highest_value - lowest_value)
-    combatLog.textContent = (attacker + " slog " + target + " och tog " + (hp - new_hp) + " skada.")
+    log(attacker + " slog " + target + " och tog " + (hp - new_hp) + " skada.")
     return new_hp
 }
 
@@ -47,7 +56,19 @@ function startRound()
     }
     else
     {
-        combatLog.textContent = "Alla missade sina attacker."
+        log("Alla missade sina attacker.")
+    }
+    if (playerHp < 1 || enemyHp < 1)
+    {
+        if (playerHp < 1)
+        {
+            playerHp = 0
+        }
+        elseif (enemyHp < 1)
+        {
+            enemyHp = 0
+        }
+        startButton.disabled = true
     }
     updateHealth()
 }
