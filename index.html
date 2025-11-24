@@ -9,19 +9,16 @@
 <body>
     <main>
         <h1>Brawl</h1>
-        <h2>Player hp: <span id="player-hp">0</span></h2>
-        <h2>Enemy hp: <span id="enemy-hp">0</span></h2>
-        
         <div class="health_bars_container">
             <div class="health_bar_outline">
-                <img class="health_bar" src="sprites/healthbar/brawl_health_bar.png" alt="bar">
+                <img id="player-health-bar-bar" class="health_bar" src="sprites/healthbar/brawl_health_bar.png" alt="bar">
                 <img class="health_bar_inner" src="sprites/healthbar/brawl_health_empty.png" alt="empty">
-                <img class="health_bar_outer" src="sprites/healthbar/brawl_health.png" alt="health">
+                <img id="player-health-bar" class="player_health_bar" src="sprites/healthbar/brawl_health.png" alt="health">
             </div>
             <div class="health_bar_outline">
-                <img class="health_bar" src="sprites/healthbar/brawl_health_bar.png" alt="bar">
+                <img id="enemy-health-bar-bar" class="health_bar" src="sprites/healthbar/brawl_health_bar.png" alt="bar">
                 <img class="health_bar_inner" src="sprites/healthbar/brawl_health_empty.png" alt="empty">
-                <img class="health_bar_outer" src="sprites/healthbar/brawl_health.png" alt="health">
+                <img id="enemy-health-bar" class="enemy_health_bar" src="sprites/healthbar/brawl_health.png" alt="health">
             </div>
         </div>
 

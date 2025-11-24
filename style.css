@@ -4,12 +4,19 @@ h1
     display: flex;
     align-content: center;
     justify-content: center;
+    font-size: 4rem;
 }
 
 button
 {
-    width: 30%;
+    width: 25%;
     height: 100%;
+    font-size: 2rem;
+}
+
+li
+{
+    font-size: 1.25rem;
 }
 
 .combatLogContainer
@@ -17,6 +24,7 @@ button
     display: flex;
     align-self: center;
     height: 12rem;
+    margin-bottom: 5rem;
 }
 
 .logList
@@ -77,12 +85,22 @@ button
     z-index: 1;
 }
 
-.health_bar_outer
+.player_health_bar
 {
     position: absolute;
     top: 15%;
     left: 24.5%;
-    width: 51%;
+    width: 51%; 
+    height: 67%;
+    z-index: 2;
+}
+
+.enemy_health_bar
+{
+    position: absolute;
+    top: 15%;
+    left: 24.5%;
+    width: 51%; 
     height: 67%;
     z-index: 2;
 }
